@@ -35,11 +35,19 @@ Please complete Part 1–2 as described in the [Google Slides](https://docs.goog
 }
 ```
 
+# How to run the code
+0. Follow the instruction in PhysGaussian to set up the enviroment.
+1. Download wolf_whitebg-trained.zip and unzip it.
+2. run
+   ```bash=
+   python gs_simulation.py --model_path ./model/wolf_whitebg-trained/ --output_path output --config ./config/wolf_config.json --render_img --compile_video --white_bg
+   ```
+3. Manually adjust the parameter in ./config/wolf_config.json.
+
 # Simulation Results
 https://www.youtube.com/watch?v=PG57BQSjBsw
 
 # Physical Parameters Adjustments and Ablation study
-
 
 ## n_grid
 baseline: n_grid = 200
