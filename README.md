@@ -64,8 +64,11 @@ baseline: grid_v_damping_scale = 1.10
 | snow  | 19.18dB | 28.02dB |
 | jelly | 30.37dB | 28.18dB |
 
+### Adjustment
+We tested different values of grid_v_damping_scale. The default was 1.1, and we also tried 1.0 and 1.05. 
+
 ### Insights
-We tested different values of grid_v_damping_scale. The default was 1.1, and we also tried 1.0 and 1.05. We noticed that when grid_v_damping_scale is higher, the object tends to shake or bounce back and forth more.
+We noticed that when grid_v_damping_scale is higher, the object tends to shake or bounce back and forth more.
 
 This likely happens because a higher grid_v_damping_scale means there's less damping, or in other words, the simulation slows down the grid's velocity less. So, when the object moves, the leftover motion in the grid isn't fully removed, and that leftover "energy" causes the object to keep moving slightly back and forth 
 
