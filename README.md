@@ -35,26 +35,44 @@ Please complete Part 1–2 as described in the [Google Slides](https://docs.goog
 }
 ```
 
+# Simulation Results
+https://www.youtube.com/watch?v=PG57BQSjBsw
+
+# Physical Parameters Adjustments and Ablation study
+
 
 ## n_grid
 baseline: n_grid = 200
-### snow
-100: 28.03dB
-300: 31.61dB
 
-### jelly
-100: 28.18dB
-300: 25.85dB
+|       |   100   |   300   |
+| ----- | ------- | ------- |
+| snow  | 28.03dB | 31.61dB |
+| jelly | 28.18dB | 25.85dB |
+
+### Adjustment
+We tested different values of n_grid. The default was 200, and we also tried 100 and 300. 
+
+### Takeaways
+
+We found that increasing n_grid makes the object look more detailed. For example, when the material is jelly, we observed bending or deformation effects at n_grid=300 that were not as visible with lower resolutions.
+
+This is likely because a higher n_grid means the simulation grid is more finely divided. With more grid cells, the simulation can capture smaller, more complex motions and shapes. 
 
 ## substep_dt
 baseline: substep_dt = 2e-5
-### snow
-6e-6: 31.96dB
-9e-6: 33.49dB
 
-### jelly
-6e-6: 33.43dB
-9e-6: 27.88dB
+|       |   6e-6  |   9e-6  |
+| ----- | ------- | ------- |
+| snow  | 31.96dB | 33.49dB |
+| jelly | 33.43dB | 27.88dB |
+
+### Adjustment
+We tested different values of substep_dt. The default was 2e-5, and we also tried 9e-6 and 6e-6. 
+
+### Takeaways
+Visually, it was hard to notice any clear difference in the simulation results. However, we found that the smaller the substep_dt, the slower the simulation runs.
+
+This is likely because substep_dt controls the time interval of each internal simulation step. A smaller substep_dt means the simulator takes more steps to cover the same amount of real time, which increases the total number of calculations. 
 
 ## grid_v_damping_scale
 baseline: grid_v_damping_scale = 1.10
@@ -67,17 +85,22 @@ baseline: grid_v_damping_scale = 1.10
 ### Adjustment
 We tested different values of grid_v_damping_scale. The default was 1.1, and we also tried 1.0 and 1.05. 
 
-### Insights
+### Takeaways
 We noticed that when grid_v_damping_scale is higher, the object tends to shake or bounce back and forth more.
 
 This likely happens because a higher grid_v_damping_scale means there's less damping, or in other words, the simulation slows down the grid's velocity less. So, when the object moves, the leftover motion in the grid isn't fully removed, and that leftover "energy" causes the object to keep moving slightly back and forth 
 
 ## softening
 baseline: softening = 0.10
-### snow
-0.15: 28.03dB
-0.20: 28.02dB
 
-### jelly
-0.15: 43.41B
-0.20: 28.02dB
+|       |   0.15  |   0.20  |
+| ----- | ------- | ------- |
+| snow  | 28.03dB | 28.02dB |
+| jelly | 43.41dB | 41.95dB |
+
+### Adjustment
+We tested different values of softening. The default was 0.10, and we also tried 0.15 and 0.20. 
+
+### Takeaways
+We observed that softening didn’t seem to affect the jelly material much, but for snow, increasing softening made the object fall faster.
+
