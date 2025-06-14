@@ -65,8 +65,8 @@ baseline: grid_v_damping_scale = 1.10
 ### jelly
 1.00: 30.37dB
 1.05: 28.18dB
-|       |   1.00  |   1.05  |
-| ----- | ------- | ------- |
+| grid_v_damping_scale |   1.00  |   1.05  |
+| -------------------- | ------- | ------- |
 | snow  | 19.18dB | 28.02dB |
 | jelly | 30.37dB | 28.18dB |
 ### Insights
