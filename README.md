@@ -34,3 +34,44 @@ Please complete Part 1–2 as described in the [Google Slides](https://docs.goog
     year      = {2024}
 }
 ```
+
+
+## n_grid
+baseline: n_grid = 200
+### snow
+100: 28.03dB
+300: 31.61dB
+
+### jelly
+100: 28.18dB
+300: 25.85dB
+
+## substep_dt
+baseline: substep_dt = 2e-5
+### snow
+6e-6: 31.96dB
+9e-6: 33.49dB
+
+### jelly
+6e-6: 33.43dB
+9e-6: 27.88dB
+
+## grid_v_damping_scale
+baseline: grid_v_damping_scale = 1.10
+### snow
+1.00: 19.18dB
+1.05: 28.02dB
+
+### jelly
+1.00: 30.37dB
+1.05: 28.18dB
+
+## softening
+baseline: softening = 0.10
+### snow
+0.15: 28.03dB
+0.20: 28.02dB
+
+### jelly
+0.15: 43.41B
+0.20: 28.02dB
