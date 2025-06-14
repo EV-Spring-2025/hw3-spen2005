@@ -1,9 +1,0 @@
-data
-.vscode
-output
-*.ply
-*.pyc
-*.png
-*.jpg
-model
-log
