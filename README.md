@@ -58,17 +58,12 @@ baseline: substep_dt = 2e-5
 
 ## grid_v_damping_scale
 baseline: grid_v_damping_scale = 1.10
-### snow
-1.00: 19.18dB
-1.05: 28.02dB
 
-### jelly
-1.00: 30.37dB
-1.05: 28.18dB
-| grid_v_damping_scale |   1.00  |   1.05  |
-| -------------------- | ------- | ------- |
+|       |   1.00  |   1.05  |
+| ----- | ------- | ------- |
 | snow  | 19.18dB | 28.02dB |
 | jelly | 30.37dB | 28.18dB |
+
 ### Insights
 We tested different values of grid_v_damping_scale. The default was 1.1, and we also tried 1.0 and 1.05. We noticed that when grid_v_damping_scale is higher, the object tends to shake or bounce back and forth more.
 
